@@ -69,45 +69,45 @@ class Batting_record(models.Model):
     # Player code
     yearID = models.IntegerField(max_length=4)
     # Year
-    stint = models.IntegerField(max_length=3)
+    stint = models.IntegerField(max_length=4)
     # player's stint (order of appearances within a season)
     teamID = models.CharField(max_length=5)
     #  Team
     lgID = models.CharField(max_length=15)
     # League
-    G = models.IntegerField(max_length=3)
+    G = models.IntegerField(max_length=4)
     # Games
-    AB = models.IntegerField(max_length=3)
+    AB = models.IntegerField(max_length=4)
     # At Bats
-    R = models.IntegerField(max_length=3)
+    R = models.IntegerField(max_length=4)
     # Runs
-    H = models.IntegerField(max_length=3)
+    H = models.IntegerField(max_length=4)
     # Hits
-    Doubles = models.IntegerField(max_length=3)
+    Doubles = models.IntegerField(max_length=4)
     #  Doubles
-    Triples = models.IntegerField(max_length=3)
+    Triples = models.IntegerField(max_length=4)
     # Triples
-    HR = models.IntegerField(max_length=3)
+    HR = models.IntegerField(max_length=4)
     # Homeruns
-    RBI = models.IntegerField(max_length=3)
+    RBI = models.IntegerField(max_length=4)
     # Runs Batted In
-    SB = models.IntegerField(max_length=3)
+    SB = models.IntegerField(max_length=4)
     # Stolen Bases
-    CS = models.IntegerField(max_length=3)
+    CS = models.IntegerField(max_length=4)
     # Caught Stealing
-    BB = models.IntegerField(max_length=3)
+    BB = models.IntegerField(max_length=4)
     # Base on Balls
-    SO = models.IntegerField(max_length=3)
+    SO = models.IntegerField(max_length=4)
     # Strikeouts
-    IBB = models.IntegerField(max_length=3)
+    IBB = models.IntegerField(max_length=4)
     # Intentional walks
-    HBP = models.IntegerField(max_length=3)
+    HBP = models.IntegerField(max_length=4)
     # Hit by pitch
-    SH = models.IntegerField(max_length=3)
+    SH = models.IntegerField(max_length=4)
     # Sacrifice hits
-    SF = models.IntegerField(max_length=3)
+    SF = models.IntegerField(max_length=4)
     # Sacrifice flies
-    GIDP = models.IntegerField(max_length=3)
+    GIDP = models.IntegerField(max_length=4)
     # Grounded into double plays
 
 
@@ -117,65 +117,101 @@ class Pitching_record(models.Model):
     # Player code
     yearID = models.IntegerField(max_length=4)
     # Year
-    stint = models.IntegerField(max_length=3)
+    stint = models.IntegerField(max_length=4)
     # player's stint (order of appearances within a season)
     teamID = models.CharField(max_length=5)
     #  Team
     lgID = models.CharField(max_length=15)
     # League
-    W = models.IntegerField(max_length=3)
+    W = models.IntegerField(max_length=4)
     # Wins
-    L = models.IntegerField(max_length=3)
+    L = models.IntegerField(max_length=4)
     # Losses
-    G = models.IntegerField(max_length=3)
+    G = models.IntegerField(max_length=4)
     # Games
-    GS = models.IntegerField(max_length=3)
+    GS = models.IntegerField(max_length=4)
     # Games Started
-    CG = models.IntegerField(max_length=3)
+    CG = models.IntegerField(max_length=4)
     # Complete Games
-    SHO = models.IntegerField(max_length=3)
+    SHO = models.IntegerField(max_length=4)
     # Shutouts
-    SV = models.IntegerField(max_length=3)
+    SV = models.IntegerField(max_length=4)
     # Saves
-    IPOuts = models.IntegerField(max_length=3)
-    # Outs Pitched (innings pitched x 3)
-    H = models.IntegerField(max_length=3)
+    IPOuts = models.IntegerField(max_length=4)
+    # Outs Pitched (innings pitched x 4)
+    H = models.IntegerField(max_length=4)
     # Hits
-    ER = models.IntegerField(max_length=3)
+    ER = models.IntegerField(max_length=4)
     # Earned Runs
-    HR = models.IntegerField(max_length=3)
+    HR = models.IntegerField(max_length=4)
     # Homeruns
-    BB = models.IntegerField(max_length=3)
+    BB = models.IntegerField(max_length=4)
     # Walks
-    SO = models.IntegerField(max_length=3)
+    SO = models.IntegerField(max_length=4)
     # Strikeouts
-    BAOpp = models.FloatField(max_length=3)
+    BAOpp = models.FloatField(max_length=4)
     # Opponent's Batting Average
-    ERA = models.FieldField(max_length=3)
+    ERA = models.FieldField(max_length=4)
     # Earned Run Average
-    IBB = models.IntegerField(max_length=3)
+    IBB = models.IntegerField(max_length=4)
     # Intentional Walks
-    WP = models.IntegerField(max_length=3)
+    WP = models.IntegerField(max_length=4)
     # Wild Pitches
-    HBP = models.IntegerField(max_length=3)
+    HBP = models.IntegerField(max_length=4)
     # Batters Hit By Pitch
-    BK = models.IntegerField(max_length=3)
+    BK = models.IntegerField(max_length=4)
     # Balks
-    BFP = models.IntegerField(max_length=3)
+    BFP = models.IntegerField(max_length=4)
     # Batters faced by Pitcher
-    GF = models.IntegerField(max_length=3)
+    GF = models.IntegerField(max_length=4)
     # Games Finished
-    R = models.IntegerField(max_length=3)
+    R = models.IntegerField(max_length=4)
     # Runs Allowed
-    SH = models.IntegerField(max_length=3)
+    SH = models.IntegerField(max_length=4)
     # Sacrifices by opposing batters
-    SF = models.IntegerField(max_length=3)
+    SF = models.IntegerField(max_length=4)
     # Sacrifice flies by opposing batters
-    GIDP = models.IntegerField(max_length=3)
+    GIDP = models.IntegerField(max_length=4)
     # Grounded into double plays by opposing batter
 
+
 class Fielding_record(models.Model):
-    
+    player_code = models.CharField(max_length=15)
+    # Player code
+    yearID = models.IntegerField(max_length=4)
+    # Year
+    stint = models.IntegerField(max_length=4)
+    # player's stint (order of appearances within a season)
+    teamID = models.CharField(max_length=5)
+    #  Team
+    lgID = models.CharField(max_length=15)
+    # League
+    Pos = models.IntegerField(max_length=4)
+    # Position
+    G = models.IntegerField(max_length=4)
+    # Games
+    GS = models.IntegerField(max_length=4)
+    # Games Started
+    InnOuts = models.IntegerField(max_length=4)
+    # Time played in the field expressed as outs
+    PO = models.IntegerField(max_length=4)
+    # Putouts
+    A = models.IntegerField(max_length=4)
+    # Assists
+    E = models.IntegerField(max_length=4)
+    # Errors
+    DP = models.IntegerField(max_length=4)
+    # Double Plays
+    PB = models.IntegerField(max_length=4)
+    # Passed Balls (by catchers)
+    WP = models.IntegerField(max_length=4)
+    # Wild Pitches (by catchers)
+    SB = models.IntegerField(max_length=4)
+    # Opponent Stolen Bases (by catchers)
+    CS = models.IntegerField(max_length=4)
+    # Opponents Caught Stealing (by catchers)
+    ZR = models.IntegerField(max_length=4)
+    # Zone Rating
 
 
 # Batting - batting statistics
