@@ -7,7 +7,7 @@ from django.db import models
 # MASTER - Player names, DOB, and biographical info
 
 
-class MASTER(models.Model):
+class Master(models.Model):
 
     player_code = models.CharField(max_length=15, blank=True)
     # A unique code asssigned to each player.  The player_code links
