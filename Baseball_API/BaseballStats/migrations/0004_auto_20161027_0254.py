@@ -31,7 +31,6 @@ def add_file(apps, schema_editor):
                                   height=row["height"], bats=row["bats"], throws=row["throws"],
                                   debut=row["debut"], finalGame=row["finalGame"], retroID=row["retroID"],
                                   bbrefID=row["bbrefID"])
-        raise Exception('HOORAH')
 
 
 class Migration(migrations.Migration):
