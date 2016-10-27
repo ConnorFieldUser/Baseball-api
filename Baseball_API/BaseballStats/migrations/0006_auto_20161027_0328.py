@@ -13,7 +13,7 @@ import csv
 def add_file(apps, schema_editor):
     Batting_record = apps.get_model("BaseballStats", "Batting_record")
     with open('Master.csv') as infile:
-        reader = csv.DictReader(infile, delimiter=',', fieldnames=["id", "player_code", "yearid", "stint",
+        reader = csv.DictReader(infile, delimiter=',', fieldnames=["player", "player_code", "yearid", "stint",
                                 "teamid", "lgid", "g", "ab", "r", "h", "doubles", "triples", "hr",
                                                                    "rbi", "sb", "cs", "bb", "so",
                                                                    "ibb", "hbp", "sh", "sf", "gidp"])

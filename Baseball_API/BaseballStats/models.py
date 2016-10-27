@@ -68,15 +68,16 @@ class Master(models.Model):
 class Batting_record(models.Model):
 
     player = models.ForeignKey(Master)
+    # player ID
     player_code = models.CharField(max_length=15, null=True,  blank=True)
     # Player code
-    yearID = models.CharField(max_length=15, null=True, blank=True)
+    yearid = models.CharField(max_length=15, null=True, blank=True)
     # Year
     stint = models.CharField(max_length=15, null=True, blank=True)
     # player's stint (order of appearances within a season)
-    teamID = models.CharField(max_length=5, null=True,  blank=True)
+    teamid = models.CharField(max_length=5, null=True,  blank=True)
     #  Team
-    lgID = models.CharField(max_length=15, null=True,  blank=True)
+    lg = models.CharField(max_length=15, null=True,  blank=True)
     # League
     g = models.CharField(max_length=15, null=True, blank=True)
     # Games
