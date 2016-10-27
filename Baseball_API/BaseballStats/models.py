@@ -78,39 +78,39 @@ class Batting_record(models.Model):
     #  Team
     lgID = models.CharField(max_length=15, null=True,  blank=True)
     # League
-    G = models.CharField(max_length=15, null=True, blank=True)
+    g = models.CharField(max_length=15, null=True, blank=True)
     # Games
-    AB = models.CharField(max_length=15, null=True, blank=True)
+    ab = models.CharField(max_length=15, null=True, blank=True)
     # At Bats
-    R = models.CharField(max_length=15, null=True, blank=True)
+    r = models.CharField(max_length=15, null=True, blank=True)
     # Runs
-    H = models.CharField(max_length=15, null=True, blank=True)
+    h = models.CharField(max_length=15, null=True, blank=True)
     # Hits
-    Doubles = models.CharField(max_length=15, null=True, blank=True)
+    doubles = models.CharField(max_length=15, null=True, blank=True)
     #  Doubles
-    Triples = models.CharField(max_length=15, null=True, blank=True)
+    triples = models.CharField(max_length=15, null=True, blank=True)
     # Triples
-    HR = models.CharField(max_length=15, null=True, blank=True)
+    hr = models.CharField(max_length=15, null=True, blank=True)
     # Homeruns
-    RBI = models.CharField(max_length=15, null=True, blank=True)
+    rbi = models.CharField(max_length=15, null=True, blank=True)
     # Runs Batted In
-    SB = models.CharField(max_length=15, null=True, blank=True)
+    sb = models.CharField(max_length=15, null=True, blank=True)
     # Stolen Bases
-    CS = models.CharField(max_length=15, null=True, blank=True)
+    cs = models.CharField(max_length=15, null=True, blank=True)
     # Caught Stealing
-    BB = models.CharField(max_length=15, null=True, blank=True)
+    bb = models.CharField(max_length=15, null=True, blank=True)
     # Base on Balls
-    SO = models.CharField(max_length=15, null=True, blank=True)
+    so = models.CharField(max_length=15, null=True, blank=True)
     # Strikeouts
-    IBB = models.CharField(max_length=15, null=True, blank=True)
+    ibb = models.CharField(max_length=15, null=True, blank=True)
     # Intentional walks
-    HBP = models.CharField(max_length=15, null=True, blank=True)
+    hbp = models.CharField(max_length=15, null=True, blank=True)
     # Hit by pitch
-    SH = models.CharField(max_length=15, null=True, blank=True)
+    sh = models.CharField(max_length=15, null=True, blank=True)
     # Sacrifice hits
-    SF = models.CharField(max_length=15, null=True, blank=True)
+    sf = models.CharField(max_length=15, null=True, blank=True)
     # Sacrifice flies
-    GIDP = models.CharField(max_length=15, null=True, blank=True)
+    gidp = models.CharField(max_length=15, null=True, blank=True)
     # Grounded into double plays
 
 
