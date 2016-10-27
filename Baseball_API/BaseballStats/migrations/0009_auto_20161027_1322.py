@@ -13,12 +13,12 @@ import csv
 def add_file(apps, schema_editor):
     Batting_record = apps.get_model("BaseballStats", "Batting_record")
     with open('Master.csv') as infile:
-        reader = csv.DictReader(infile, delimiter=',', fieldnames=["player", "player_code", "yearid", "stint",
+        reader = csv.DictReader(infile, delimiter=',', fieldnames=["playerid", "player", "yearid", "stint",
                                 "teamid", "lgid", "g", "ab", "r", "h", "doubles", "triples", "hr",
                                                                    "rbi", "sb", "cs", "bb", "so",
                                                                    "ibb", "hbp", "sh", "sf", "gidp"])
         for row in reader:
-            player = Master.objects.get(id=row["player"])
+            playerid = Master.objects.get(id=row["playerid"])
             Batting_record.objects.create(player_code=row["player_code"],
                                           yearid=row["yearid"], stint=row["stint"],
                                           teamid=row["teamid"], lgid=row["lgid"],

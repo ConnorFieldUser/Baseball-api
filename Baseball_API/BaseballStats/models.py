@@ -67,7 +67,7 @@ class Master(models.Model):
 
 class Batting_record(models.Model):
 
-    player = models.ForeignKey(Master)
+    playerid = models.ForeignKey(Master)
     # player ID
     player_code = models.CharField(max_length=15, null=True,  blank=True)
     # Player code
