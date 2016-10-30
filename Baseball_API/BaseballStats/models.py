@@ -9,7 +9,7 @@ from django.db import models
 
 class Master(models.Model):
 
-    player = models.CharField(max_length=15, null=True, blank=True)
+    playerID = models.CharField(max_length=15, null=True, blank=True)
     # A unique code asssigned to each player.  The player_code links
     # the data in this file with records in the other files.
     birthYear = models.CharField(max_length=15, null=True, blank=True)
