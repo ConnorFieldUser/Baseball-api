@@ -67,159 +67,162 @@ class Master(models.Model):
 
 class Batting_record(models.Model):
 
-    playerid = models.ForeignKey(Master)
     # player ID
-    player_code = models.CharField(max_length=15, null=True,  blank=True)
+    playerID = models.CharField(max_length=15, null=True,  blank=True)
     # Player code
-    yearid = models.CharField(max_length=15, null=True, blank=True)
+    yearID = models.CharField(max_length=15, null=True, blank=True)
     # Year
     stint = models.CharField(max_length=15, null=True, blank=True)
     # player's stint (order of appearances within a season)
-    teamid = models.CharField(max_length=5, null=True,  blank=True)
+    teamID = models.CharField(max_length=5, null=True,  blank=True)
     #  Team
-    lg = models.CharField(max_length=15, null=True,  blank=True)
+    lgID = models.CharField(max_length=15, null=True,  blank=True)
     # League
-    g = models.CharField(max_length=15, null=True, blank=True)
+    G = models.CharField(max_length=15, null=True, blank=True)
     # Games
-    ab = models.CharField(max_length=15, null=True, blank=True)
+    AB = models.CharField(max_length=15, null=True, blank=True)
     # At Bats
-    r = models.CharField(max_length=15, null=True, blank=True)
+    R = models.CharField(max_length=15, null=True, blank=True)
     # Runs
-    h = models.CharField(max_length=15, null=True, blank=True)
+    H = models.CharField(max_length=15, null=True, blank=True)
     # Hits
     doubles = models.CharField(max_length=15, null=True, blank=True)
     #  Doubles
     triples = models.CharField(max_length=15, null=True, blank=True)
     # Triples
-    hr = models.CharField(max_length=15, null=True, blank=True)
+    HR = models.CharField(max_length=15, null=True, blank=True)
     # Homeruns
-    rbi = models.CharField(max_length=15, null=True, blank=True)
+    RBI = models.CharField(max_length=15, null=True, blank=True)
     # Runs Batted In
-    sb = models.CharField(max_length=15, null=True, blank=True)
+    SB = models.CharField(max_length=15, null=True, blank=True)
     # Stolen Bases
-    cs = models.CharField(max_length=15, null=True, blank=True)
+    CS = models.CharField(max_length=15, null=True, blank=True)
     # Caught Stealing
-    bb = models.CharField(max_length=15, null=True, blank=True)
+    BB = models.CharField(max_length=15, null=True, blank=True)
     # Base on Balls
-    so = models.CharField(max_length=15, null=True, blank=True)
+    SO = models.CharField(max_length=15, null=True, blank=True)
     # Strikeouts
-    ibb = models.CharField(max_length=15, null=True, blank=True)
+    IBB = models.CharField(max_length=15, null=True, blank=True)
     # Intentional walks
-    hbp = models.CharField(max_length=15, null=True, blank=True)
+    HBP = models.CharField(max_length=15, null=True, blank=True)
     # Hit by pitch
-    sh = models.CharField(max_length=15, null=True, blank=True)
+    SH = models.CharField(max_length=15, null=True, blank=True)
     # Sacrifice hits
-    sf = models.CharField(max_length=15, null=True, blank=True)
+    SF = models.CharField(max_length=15, null=True, blank=True)
     # Sacrifice flies
-    gidp = models.CharField(max_length=15, null=True, blank=True)
+    GIDP = models.CharField(max_length=15, null=True, blank=True)
     # Grounded into double plays
+    master = models.ForeignKey(Master)
 
 
-# # Pitching - pitching statistics
-#
-#
-# class Pitching_record(models.Model):
-#
-#     player_code = models.CharField(max_length=15, null=True, blank=True)
-#     # Player code
-#     yearID = models.CharField(max_length=15, null=True, blank=True)
-#     # Year
-#     stint = models.CharField(max_length=15, null=True, blank=True)
-#     # player's stint (order of appearances within a season)
-#     teamID = models.CharField(max_length=5, null=True, blank=True)
-#     #  Team
-#     lgID = models.CharField(max_length=15, null=True, blank=True)
-#     # League
-#     W = models.CharField(max_length=15, null=True, blank=True)
-#     # Wins
-#     L = models.CharField(max_length=15, null=True, blank=True)
-#     # Losses
-#     G = models.CharField(max_length=15, null=True, blank=True)
-#     # Games
-#     GS = models.CharField(max_length=15, null=True, blank=True)
-#     # Games Started
-#     CG = models.CharField(max_length=15, null=True, blank=True)
-#     # Complete Games
-#     SHO = models.CharField(max_length=15, null=True, blank=True)
-#     # Shutouts
-#     SV = models.CharField(max_length=15, null=True, blank=True)
-#     # Saves
-#     IPOuts = models.CharField(max_length=15, null=True, blank=True)
-#     # Outs Pitched (innings pitched x 4)
-#     H = models.CharField(max_length=15, null=True, blank=True)
-#     # Hits
-#     ER = models.CharField(max_length=15, null=True, blank=True)
-#     # Earned Runs
-#     HR = models.CharField(max_length=15, null=True, blank=True)
-#     # Homeruns
-#     BB = models.CharField(max_length=15, null=True, blank=True)
-#     # Walks
-#     SO = models.CharField(max_length=15, null=True, blank=True)
-#     # Strikeouts
-#     BAOpp = models.FloatField(max_length=15, null=True, blank=True)
-#     # Opponent's Batting Average
-#     ERA = models.Floatield(max_length=15, null=True, blank=True)
-#     # Earned Run Average
-#     IBB = models.CharField(max_length=15, null=True, blank=True)
-#     # Intentional Walks
-#     WP = models.CharField(max_length=15, null=True, blank=True)
-#     # Wild Pitches
-#     HBP = models.CharField(max_length=15, null=True, blank=True)
-#     # Batters Hit By Pitch
-#     BK = models.CharField(max_length=15, null=True, blank=True)
-#     # Balks
-#     BFP = models.CharField(max_length=15, null=True, blank=True)
-#     # Batters faced by Pitcher
-#     GF = models.CharField(max_length=15, null=True, blank=True)
-#     # Games Finished
-#     R = models.CharField(max_length=15, null=True, blank=True)
-#     # Runs Allowed
-#     SH = models.CharField(max_length=15, null=True, blank=True)
-#     # Sacrifices by opposing batters
-#     SF = models.CharField(max_length=15, null=True, blank=True)
-#     # Sacrifice flies by opposing batters
-#     GIDP = models.CharField(max_length=15, null=True, blank=True)
-#     # Grounded into double plays by opposing batter
-#
-#
-# # Fielding - fielding statistics
-# class Fielding_record(models.Model):
-#     player_code = models.CharField(max_length=15, null=True, blank=True)
-#     # Player code
-#     yearID = models.CharField(max_length=15, null=True, blank=True)
-#     # Year
-#     stint = models.CharField(max_length=15, null=True, blank=True)
-#     # player's stint (order of appearances within a season)
-#     teamID = models.CharField(max_length=5, null=True, blank=True)
-#     #  Team
-#     lgID = models.CharField(max_length=15, null=True, blank=True)
-#     # League
-#     Pos = models.CharField(max_length=15, null=True, blank=True)
-#     # Position
-#     G = models.CharField(max_length=15, null=True, blank=True)
-#     # Games
-#     GS = models.CharField(max_length=15, null=True, blank=True)
-#     # Games Started
-#     InnOuts = models.CharField(max_length=15, null=True, blank=True)
-#     # Time played in the field expressed as outs
-#     PO = models.CharField(max_length=15, null=True, blank=True)
-#     # Putouts
-#     A = models.CharField(max_length=15, null=True, blank=True)
-#     # Assists
-#     E = models.CharField(max_length=15, null=True, blank=True)
-#     # Errors
-#     DP = models.CharField(max_length=15, null=True, blank=True)
-#     # Double Plays
-#     PB = models.CharField(max_length=15, null=True, blank=True)
-#     # Passed Balls (by catchers)
-#     WP = models.CharField(max_length=15, null=True, blank=True)
-#     # Wild Pitches (by catchers)
-#     SB = models.CharField(max_length=15, null=True, blank=True)
-#     # Opponent Stolen Bases (by catchers)
-#     CS = models.CharField(max_length=15, null=True, blank=True)
-#     # Opponents Caught Stealing (by catchers)
-#     ZR = models.CharField(max_length=15, null=True, blank=True)
-#     # Zone Rating
+# Pitching - pitching statistics
+
+
+class Pitching_record(models.Model):
+
+    playerID = models.CharField(max_length=15, null=True, blank=True)
+    # Player code
+    yearID = models.CharField(max_length=15, null=True, blank=True)
+    # Year
+    stint = models.CharField(max_length=15, null=True, blank=True)
+    # player's stint (order of appearances within a season)
+    teamID = models.CharField(max_length=5, null=True, blank=True)
+    #  Team
+    lgID = models.CharField(max_length=15, null=True, blank=True)
+    # League
+    W = models.CharField(max_length=15, null=True, blank=True)
+    # Wins
+    L = models.CharField(max_length=15, null=True, blank=True)
+    # Losses
+    G = models.CharField(max_length=15, null=True, blank=True)
+    # Games
+    GS = models.CharField(max_length=15, null=True, blank=True)
+    # Games Started
+    CG = models.CharField(max_length=15, null=True, blank=True)
+    # Complete Games
+    SHO = models.CharField(max_length=15, null=True, blank=True)
+    # Shutouts
+    SV = models.CharField(max_length=15, null=True, blank=True)
+    # Saves
+    IPouts = models.CharField(max_length=15, null=True, blank=True)
+    # Outs Pitched (innings pitched x 4)
+    H = models.CharField(max_length=15, null=True, blank=True)
+    # Hits
+    ER = models.CharField(max_length=15, null=True, blank=True)
+    # Earned Runs
+    HR = models.CharField(max_length=15, null=True, blank=True)
+    # Homeruns
+    BB = models.CharField(max_length=15, null=True, blank=True)
+    # Walks
+    SO = models.CharField(max_length=15, null=True, blank=True)
+    # Strikeouts
+    BAOpp = models.CharField(max_length=15, null=True, blank=True)
+    # Opponent's Batting Average
+    ERA = models.CharField(max_length=15, null=True, blank=True)
+    # Earned Run Average
+    IBB = models.CharField(max_length=15, null=True, blank=True)
+    # Intentional Walks
+    WP = models.CharField(max_length=15, null=True, blank=True)
+    # Wild Pitches
+    HBP = models.CharField(max_length=15, null=True, blank=True)
+    # Batters Hit By Pitch
+    BK = models.CharField(max_length=15, null=True, blank=True)
+    # Balks
+    BFP = models.CharField(max_length=15, null=True, blank=True)
+    # Batters faced by Pitcher
+    GF = models.CharField(max_length=15, null=True, blank=True)
+    # Games Finished
+    R = models.CharField(max_length=15, null=True, blank=True)
+    # Runs Allowed
+    SH = models.CharField(max_length=15, null=True, blank=True)
+    # Sacrifices by opposing batters
+    SF = models.CharField(max_length=15, null=True, blank=True)
+    # Sacrifice flies by opposing batters
+    GIDP = models.CharField(max_length=15, null=True, blank=True)
+    # Grounded into double plays by opposing batter
+    master = models.ForeignKey(Master)
+
+
+# Fielding - fielding statistics
+class Fielding_record(models.Model):
+    playerID = models.CharField(max_length=15, null=True, blank=True)
+    # Player code
+    yearID = models.CharField(max_length=15, null=True, blank=True)
+    # Year
+    stint = models.CharField(max_length=15, null=True, blank=True)
+    # player's stint (order of appearances within a season)
+    teamID = models.CharField(max_length=5, null=True, blank=True)
+    #  Team
+    lgID = models.CharField(max_length=15, null=True, blank=True)
+    # League
+    POS = models.CharField(max_length=15, null=True, blank=True)
+    # Position
+    G = models.CharField(max_length=15, null=True, blank=True)
+    # Games
+    GS = models.CharField(max_length=15, null=True, blank=True)
+    # Games Started
+    InnOuts = models.CharField(max_length=15, null=True, blank=True)
+    # Time played in the field expressed as outs
+    PO = models.CharField(max_length=15, null=True, blank=True)
+    # Putouts
+    A = models.CharField(max_length=15, null=True, blank=True)
+    # Assists
+    E = models.CharField(max_length=15, null=True, blank=True)
+    # Errors
+    DP = models.CharField(max_length=15, null=True, blank=True)
+    # Double Plays
+    PB = models.CharField(max_length=15, null=True, blank=True)
+    # Passed Balls (by catchers)
+    WP = models.CharField(max_length=15, null=True, blank=True)
+    # Wild Pitches (by catchers)
+    SB = models.CharField(max_length=15, null=True, blank=True)
+    # Opponent Stolen Bases (by catchers)
+    CS = models.CharField(max_length=15, null=True, blank=True)
+    # Opponents Caught Stealing (by catchers)
+    ZR = models.CharField(max_length=15, null=True, blank=True)
+    # Zone Rating
+    master = models.ForeignKey(Master)
+
 #
 # # obp ==  H + BB + HBP
 # #        _____________
