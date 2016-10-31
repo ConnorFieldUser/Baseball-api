@@ -11,7 +11,7 @@ def add_my_files(apps, schema_editor):
     Master = apps.get_model("BaseballStats", "Master")
     Batting_record = apps.get_model("BaseballStats", "Batting_record")
     Pitching_record = apps.get_model("BaseballStats", "Pitching_record")
-    Fielding_record = apps.get_model("BaseballStats", "Fielding")
+    Fielding_record = apps.get_model("BaseballStats", "Fielding_record")
 # Master
     with open('Master.csv') as infile:
         reader = csv.DictReader(infile)
