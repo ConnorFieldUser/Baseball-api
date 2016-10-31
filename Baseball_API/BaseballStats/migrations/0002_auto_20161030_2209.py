@@ -22,7 +22,6 @@ def add_my_files(apps, schema_editor):
                                   birthState=row["birthState"],
                                   birthCity=row["birthCity"], deathYear=row["deathYear"],
                                   deathMonth=row["deathMonth"], deathDay=row["deathDay"],
-                                  deathCountry=row["deathCountry"],
                                   deathCountry=row["deathCountry"], deathState=row["deathState"],
                                   deathCity=row["deathCity"],
                                   nameFirst=row["nameFirst"], nameLast=row["nameLast"], nameGiven=row["nameGiven"],
@@ -43,23 +42,23 @@ def add_my_files(apps, schema_editor):
                                           RBI=row["RBI"], SB=row["SB"], CS=row["CS"],
                                           BB=row["BB"], SO=row["SO"], IBB=row["IBB"],
                                           HBP=row["HBP"], SH=row["SH"], SF=row["SF"], GIDP=row["GIDP"],
-                                          master=row["master"])
+                                          master=master)
 # Pitching
     with open('Pitching.csv', encoding='latin1') as infile:
         reader = csv.DictReader(infile)
         for row in reader:
             master = Master.objects.get(id=row["master"])
             Pitching_record.objects.create(playerID=row["playerID"], yearID=row["yearID"],
-                                          stint=row["stint"], teamID=["teamID"],
-                                          lgID=row["lgID"], W=row["W"],
-                                          L=row["L"], G=row["G"],
-                                          GS=row["GS"],
-                                          CG=row["CG"], SHO=row["SHO"], SV=row["SV"],
-                                          IPouts=row["IPouts"], H=row["H"], ER=row["ER"],
-                                          SO=row["SO"], BAOpp=row["BAOpp"], ERA=row["ERA"],
-                                          IBB=row["IBB"], WP=row["WP"], BK=row["BK"], BFP=row["BFP"],
-                                          GF=row["GF"], R=row["R"], SH=row["SH"], SF=row["SF"],
-                                          GIDP=row["GIDP"], master=row["master"])
+                                           stint=row["stint"], teamID=["teamID"],
+                                           lgID=row["lgID"], W=row["W"],
+                                           L=row["L"], G=row["G"],
+                                           GS=row["GS"],
+                                           CG=row["CG"], SHO=row["SHO"], SV=row["SV"],
+                                           IPouts=row["IPouts"], H=row["H"], ER=row["ER"],
+                                           SO=row["SO"], BAOpp=row["BAOpp"], ERA=row["ERA"],
+                                           IBB=row["IBB"], WP=row["WP"], BK=row["BK"], BFP=row["BFP"],
+                                           GF=row["GF"], R=row["R"], SH=row["SH"], SF=row["SF"],
+                                           GIDP=row["GIDP"], master=master)
 # Fielding
     with open('Fielding.csv', encoding='latin1') as infile:
         reader = csv.DictReader(infile)
@@ -72,8 +71,9 @@ def add_my_files(apps, schema_editor):
                                            PO=row["PO"], A=row["A"], E=row["E"],
                                            DP=row["DP"], PB=row["PB"], WP=row["WP"],
                                            SB=row["SB"], CS=row["CS"], ZR=row["ZR"],
-                                           master=row["master"])
+                                           master=master)
         raise Exception('TEST SUCCESS')
+
 
 class Migration(migrations.Migration):
 
