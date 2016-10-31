@@ -16,7 +16,7 @@ def add_my_files(apps, schema_editor):
     with open('Master.csv') as infile:
         reader = csv.DictReader(infile)
         for row in reader:
-            Master.objects.create(playerID=row["playerId"],
+            Master.objects.create(playerID=row["playerID"],
                                   birthYear=row["birthYear"], birthMonth=row["birthMonth"],
                                   birthDay=row["birthDay"], birthCountry=row["birthCountry"],
                                   birthState=row["birthState"],
@@ -27,12 +27,12 @@ def add_my_files(apps, schema_editor):
                                   nameFirst=row["nameFirst"], nameLast=row["nameLast"], nameGiven=row["nameGiven"],
                                   weight=row["weight"], height=row["height"], bats=row["bats"],
                                   throws=row["throws"], debut=row["debut"], finalGame=row["finalGame"],
-                                  retroID=row["retroID"], bbredID=row["bbbrefID"])
+                                  retroID=row["retroID"], bbrefID=row["bbrefID"])
 # Batting
     with open('Batting.csv') as infile:
         reader = csv.DictReader(infile)
         for row in reader:
-            master = Master.objects.get(id=row["master"])
+            master = Master.objects.get(id=row["id"])
             Batting_record.objects.create(playerID=row["playerID"], yearID=row["yearID"],
                                           stint=row["stint"], teamID=["teamID"],
                                           lgID=row["lgID"], G=row["G"],
@@ -47,7 +47,7 @@ def add_my_files(apps, schema_editor):
     with open('Pitching.csv', encoding='latin1') as infile:
         reader = csv.DictReader(infile)
         for row in reader:
-            master = Master.objects.get(id=row["master"])
+            master = Master.objects.get(id=row["id"])
             Pitching_record.objects.create(playerID=row["playerID"], yearID=row["yearID"],
                                            stint=row["stint"], teamID=["teamID"],
                                            lgID=row["lgID"], W=row["W"],
@@ -63,7 +63,7 @@ def add_my_files(apps, schema_editor):
     with open('Fielding.csv', encoding='latin1') as infile:
         reader = csv.DictReader(infile)
         for row in reader:
-            master = Master.objects.get(id=row["master"])
+            master = Master.objects.get(id=row["id"])
             Fielding_record.objects.create(playerID=row["playerID"],
                                            stint=row["stint"], teamID=row["teamID"],
                                            lgID=row["lgID"], POS=row["POS"], G=row["G"],
