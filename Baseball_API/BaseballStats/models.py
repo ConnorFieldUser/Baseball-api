@@ -68,7 +68,7 @@ class Master(models.Model):
 class Batting_record(models.Model):
 
     # player ID
-    playerID = models.CharField(max_length=15, null=True,  blank=True)
+    playerID = models.ForeignKey(Master)
     # Player code
     yearID = models.CharField(max_length=15, null=True, blank=True)
     # Year
@@ -112,15 +112,13 @@ class Batting_record(models.Model):
     # Sacrifice flies
     GIDP = models.CharField(max_length=15, null=True, blank=True)
     # Grounded into double plays
-    master = models.ForeignKey(Master)
-
 
 # Pitching - pitching statistics
 
 
 class Pitching_record(models.Model):
 
-    playerID = models.CharField(max_length=15, null=True, blank=True)
+    playerID = models.ForeignKey(Master)
     # Player code
     yearID = models.CharField(max_length=15, null=True, blank=True)
     # Year
@@ -180,12 +178,11 @@ class Pitching_record(models.Model):
     # Sacrifice flies by opposing batters
     GIDP = models.CharField(max_length=15, null=True, blank=True)
     # Grounded into double plays by opposing batter
-    master = models.ForeignKey(Master)
 
 
 # Fielding - fielding statistics
 class Fielding_record(models.Model):
-    playerID = models.CharField(max_length=15, null=True, blank=True)
+    playerID = models.ForeignKey(Master)
     # Player code
     yearID = models.CharField(max_length=15, null=True, blank=True)
     # Year
@@ -221,7 +218,6 @@ class Fielding_record(models.Model):
     # Opponents Caught Stealing (by catchers)
     ZR = models.CharField(max_length=15, null=True, blank=True)
     # Zone Rating
-    master = models.ForeignKey(Master)
 
 #
 # # obp ==  H + BB + HBP
