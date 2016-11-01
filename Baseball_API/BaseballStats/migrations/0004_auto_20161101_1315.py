@@ -71,7 +71,6 @@ def add_my_files(apps, schema_editor):
                                            PO=row["PO"], A=row["A"], E=row["E"],
                                            DP=row["DP"], PB=row["PB"], WP=row["WP"],
                                            SB=row["SB"], CS=row["CS"], ZR=row["ZR"])
-        raise Exception('TEST SUCCESS')
 
 
 class Migration(migrations.Migration):
