@@ -25,24 +25,27 @@ class Batting_recordListCreateAPIView(ListCreateAPIView):
     queryset = Batting_record.objects.all()
     serializer_class = Batting_recordSerializer
 
-    class Batting_recordDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-        queryset = Batting_record.objects.all()
-        serializer_class = Batting_recordSerializer
+
+class Batting_recordDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Batting_record.objects.all()
+    serializer_class = Batting_recordSerializer
 
 
 class Pitching_recordListCreateAPIView(ListCreateAPIView):
     queryset = Pitching_record.objects.all()
     serializer_class = Pitching_recordSerializer
 
-    class Pitching_recordDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-        queryset = Pitching_record.objects.all()
-        serializer_class = Pitching_recordSerializer
+
+class Pitching_recordDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Pitching_record.objects.all()
+    serializer_class = Pitching_recordSerializer
 
 
 class Fielding_recordListCreateAPIView(ListCreateAPIView):
     queryset = Fielding_record.objects.all()
     serializer_class = Fielding_recordSerializer
 
-    class Fielding_recordDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-        queryset = Fielding_record.objects.all()
-        serializer_class = Fielding_recordSerializer
+
+class Fielding_recordDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Fielding_record.objects.all()
+    serializer_class = Fielding_recordSerializer
