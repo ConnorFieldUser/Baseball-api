@@ -16,6 +16,22 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from BaseballStats.views import MasterListCreateAPIView, MasterDetailUpdateDestroyAPIView, Batting_recordListCreateAPIView, Batting_recordDetailUpdateDestroyAPIView, Pitching_recordListCreateAPIView, Pitching_recordDetailUpdateDestroyAPIView, Fielding_recordListCreateAPIView, SpecialDetailUpdateDestroyAPIView
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # API Views
+    url(r'^master/$', MasterListCreateAPIView.as_view(), name="master_list_create_api_view"),
+    url(r'^specials/(?P<pk>\d+)/$', MasterDetailUpdateDestroyAPIView.as_view(), name="master_detail_update_destroy_api_view"),
+
+    url(r'^batting/$', Batting_recordListCreateAPIView.as_view(), name="batting_record_list_create_api_view"),
+    url(r'^specials/(?P<pk>\d+)/$', Batting_recordDetailUpdateDestroyAPIView.as_view(), name="batting_record_detail_update_destroy_api_view"),
+
+    url(r'^pitching/$', Pitching_recordListCreateAPIView.as_view(), name="pitching_list_create_api_view"),
+    url(r'^specials/(?P<pk>\d+)/$', Pitching_recordDetailUpdateDestroyAPIView.as_view(), name="pitching_record_detail_update_destroy_api_view"),
+
+    url(r'^fielding/$', Fielding_recordListCreateAPIView.as_view(), name="fielding_list_create_api_view"),
+    url(r'^specials/(?P<pk>\d+)/$', SpecialDetailUpdateDestroyAPIView.as_view(), name="special_detail_update_destroy_api_view")
+
 ]
