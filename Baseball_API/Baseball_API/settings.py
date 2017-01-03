@@ -25,7 +25,7 @@ SECRET_KEY = '%j$5c+_f#ahf$^i&rt+2$ye3#76nidw+i%eluac_q_qv$vm6f_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["powerful-atoll-50400.herokuapp.com", "localhost"]
 
 
 # Application definition
@@ -75,6 +75,15 @@ WSGI_APPLICATION = 'Baseball_API.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+import dj_database_url
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -82,6 +91,10 @@ DATABASES = {
     }
 }
 
+heroku_database = dj_database_url.config()
+
+if heroku_database:
+    DATABASES['default'] = heroku_database
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -118,5 +131,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
